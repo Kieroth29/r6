@@ -11,13 +11,42 @@
 
 	<label for="L85a2">L85A2</label>
 	<br>
-	<img src="wps/L85a2.webp" id="L85a2">
-
+	<button>
+		<img src="wps/L85a2.webp" id="L85a2">
+	</button>
+	
 	<label for="AR33">AR33</label>
-	<img src="wps/AR33.webp" id="AR33">
-
+	<button>
+		<img src="wps/AR33.webp" id="AR33">
+	</button>
 	<br>
-	<span id="typespan">TYPE</span>
+	
+	<table id="data" width="100%">
+		<thead>
+			<tr>
+				<th>Tipo</th>
+				<th>Operadores</th>
+				<th>Equipe</th>
+				<th>Organizações</th>
+				<th>Dano</th>
+				<th>Dano com supressor</th>
+				<th>ROF</th>
+				<th>Pente</th>
+			</tr>
+		</thead>
+	</table>
+	
+	<footer>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="buttons.js"></script>
+	</footer>
+
+	<?php
+
+	include 'connectdb.php';
+
+	?>
+
 </body>
 
 </html>
