@@ -9,25 +9,31 @@
 
 <body>
 
-	<label for="L85a2">L85A2</label>
-	<br>
-	<button>
-		<img src="wps/L85a2.webp" id="L85a2">
-	</button>
+	<?php
+
+	include 'connectdb.php';
+
+	$populate = "SELECT arma FROM armas";
+	$query = mysqli_query($link,$populate);
 	
-	<label for="AR33">AR33</label>
-	<button>
-		<img src="wps/AR33.webp" id="AR33">
-	</button>
-	<br>
-	
+	while($results[] = mysqli_fetch_object($query));
+    array_pop($results);
+
+	?>
+
+	<form method="post">
+		<select name="select_armas" id="select_armas">
+			<?php foreach($results as $option): ?>
+	          <option value="<?php echo $option->arma; ?>"><?php echo $option->arma?></option>
+	     	<?php endforeach; ?>
+		</select>
+	</form>
+
 	<table id="data" width="100%">
 		<thead>
 			<tr>
 				<th>Tipo</th>
-				<th>Operadores</th>
 				<th>Equipe</th>
-				<th>Organizações</th>
 				<th>Dano</th>
 				<th>Dano com supressor</th>
 				<th>ROF</th>
@@ -41,11 +47,6 @@
 		<script type="text/javascript" src="buttons.js"></script>
 	</footer>
 
-	<?php
-
-	include 'connectdb.php';
-
-	?>
 
 </body>
 
