@@ -1,22 +1,28 @@
 $(function(){
-
 	$('#btn').click(function(){
-		var arma = $('#arma').val();
-		var tipo = $('#tipo').val();
-		var team = $('#equipe').val();
-		var dmg = $('#dmg').val();
-		var dmg_sup = $('#dmgsup').val();
-		var rof = $('#rof').val();
-		var mag = $('#mag').val();
+			var arma = $('#arma').val();
+			var team = $('#team').val();
+			var dmg = $('#dmg').val();
+			var dmgsup = $('#dmgsup').val();
+			var rof = $('#rof').val();
+			var mag = $('#mag').val();
 
-		$.ajax({
-			type: "POST",
-			url: "cadastro.php",
-			data: {arma}
-		})
-		.done(function(msg){
-			alert("Sucesso no cadastro.");
-		});
+			if(arma != "" && team != "" && dmg != "" && dmgsup != "" && rof != "" && mag !=""){
+				$.ajax({
+					url: "cadastro.php",
+					type: "POST",
+					data: {
+						arma: arma,
+						team: team,
+						dmg: dmg,
+						dmgsup: dmgsup,
+						rof: rof,
+						mag: mag
+					}
+				});
+		
+			}else{
+				alert("Preencha todos os campos!");
+			}
 	});
-
 });

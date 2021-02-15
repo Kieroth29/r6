@@ -2,7 +2,12 @@ $(function(){
 
 	$('#data').hide();
 
-	$('#L85a2').on('click',function(){
-		$('#data').show();
-	});
+	var selectData = getElementById("select_armas");
+
+	switch(selectData){
+		case AR33:
+			
+			break;
+	}
+
 });
